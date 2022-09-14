@@ -1,0 +1,39 @@
+@import url(./booklet.css);
+
+/* 
+
+|----------- 210mm / 840dp ------------|
+   |-------- 175mm / 700dp ---------|   
+
+|--------------------------------------|
+|                                      |
+|   A4                                 |
+|                                      | 
+
+*/
+
+#write::after {
+  box-sizing: content-box;
+  pointer-events: none;
+  content: '';
+
+  position: absolute;
+  /* inset: calc(var(--paper-pad) - var(--rh)) 0rem 0rem var(--paper-pad); */
+  inset: calc(var(--paper-pad) - var(--rh) - 1) 0rem 0rem var(--paper-pad);
+  
+  height: calc(100% - var(--paper-pad) * 2);
+  width: calc(100% - var(--paper-pad) * 2);
+  
+  /* background: top center repeating-linear-gradient(to bottom, transparent, transparent var(--rh), rgba(123 115 206 / 15%) var(--rh), rgba(123 115 206 / 15%) calc(var(--rh) * 2)); */
+  background: top center repeating-linear-gradient(to bottom, transparent, transparent calc(var(--rh) / 2), rgba(123 115 206 / 15%) calc(var(--rh) / 2), rgba(123 115 206 / 15%) var(--rh));
+  
+  /* inset: calc(0rem - var(--cm) / 4) 0rem 0rem 0rem;
+  height: 100%;
+  width: 100%;
+
+  background: top center repeating-linear-gradient(to bottom, transparent, transparent calc(var(--cm) / 8), rgba(123 115 206 / 15%) calc(var(--cm) / 8), rgba(123 115 206 / 15%) calc(var(--cm) / 4)); */
+}
+
+img {
+  opacity: 0;
+}

@@ -1,0 +1,112 @@
+
+/** Common */
+
+* {
+  box-sizing: border-box;
+}
+
+/** Typora Viewport */
+
+body > content {
+  margin: 0rem calc(0rem - var(--paper-pad));
+}
+
+/** Typora Document */
+
+#write,
+#write * {
+  box-sizing: border-box;
+}
+
+#write {
+  position: relative;
+
+  width: calc(100% - var(--paper-spl) * 2);
+  max-width: calc(var(--paper-wid));
+  min-height: unset !important;
+
+  margin: var(--paper-spl) auto;
+  padding: var(--paper-pad) var(--paper-pad);
+
+  background: #ffffff;
+
+  border: 1px solid var(--type-800);
+  border-radius: var(--text-highlight-radius);
+}
+
+@media print {
+  #write {
+    width: calc(var(--paper-wid) - var(--paper-pad) * 2);
+    margin: 0rem 0rem;
+    padding: 0rem 0rem;
+
+    background: transparent;
+    border: none;
+  }
+}
+
+@page {
+  margin: var(--paper-pad);
+}
+
+
+:root {
+  --heading-char-color: var(--light-trait-400);
+
+  --color-popover-bg-color: var(--text-color);
+
+  --rawblock-edit-panel-bd: var(--bg-color-dark);
+  --control-text-color: #212121;
+  --meta-content-color: var(--primary-color);
+  --primary-btn-border-color: var(--primary-color);
+
+  --side-bar-bg-color: #fcfcfc;
+
+  --item-hover-bg-color: #e8e7e4;
+
+  --active-file-bg-color: #e8e7e4;
+  --active-file-border-color: var(--bg-color);
+
+  --window-border: 0px solid var(--bg-color);
+
+  --focus-ring-color: var(--prim-500); /* focusd elements */
+}
+
+body {
+  background: var(--side-bar-bg-color);
+}
+
+/* hide yaml header*/
+pre[mdtype='meta_block'] {
+  display: none !important;
+}
+
+/**
+ * @example
+ * <article>
+ *   <section>
+ *     <h1>Outline</h1>
+ *     <p>Common Markdown examples</p>
+ *   </section>
+ *   <aside> 
+ *     <p>0</p>
+ *   </aside>
+ * </article>
+ */
+#write article {
+  display: flex;
+  flex-direction: row;
+
+  padding: 0rem 0rem;
+  margin: 0rem 0rem var(--rh);
+}
+
+#write article > section,
+#write article > aside {
+  display: block;
+  flex: 1;
+}
+
+#write article > aside {
+  text-align: end;
+}
