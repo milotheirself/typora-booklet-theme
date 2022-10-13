@@ -1,4 +1,4 @@
-# Booklet Theme for Typora
+# Booklet Typora
 
 ![header](assets/images/enhanced-showcase.png)
 
@@ -8,10 +8,9 @@ Booklet is a standalone application designed primarily for developers, and as su
 
 ### Local development
 
-A local development server is available using:
+A file observer is available using:
 
 ```
 deno run -A --watch=themes/ dev.ts
 ```
-
-> Note: Make sure that "Disable cache" is enabled in Typora's developer tool network panel.
+> Make sure that "Disable cache" is enabled in Typora's developer tool network panel. 

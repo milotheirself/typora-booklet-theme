@@ -1,28 +1,28 @@
 @import url(./booklet/fonts/BreezeSans.css);
 /* @import url(./booklet/fonts/BreezeSans-Condensed.css); */
 
-@import url(./booklet/typora.css);
 @import url(./booklet/typora-span-elements.css);
 @import url(./booklet/typora-block-elements.css);
+@import url(./booklet/typora.css);
 
 /** Properties */
-:root {
+html {
   --scale: 1.231;
 
-  --cm: calc(40px * var(--scale));
+  --cm: calc(10mm * var(--scale));
   --rh: calc(var(--cm) / 4);
 
   font-size: calc(var(--cm) * 0.4) !important;
 }
 
 @media print {
-  :root {
-    font-size: calc(16px * 794 / 840) !important;
-    --cm: calc(40px * 794 / 840); /* 37.781px/cm */
+  html {
+    --scale: 1;
   }
 }
 
-:root {
+
+html {
   /* */
   --text-gut: calc(var(--rh) * 0.5);
   --text-mar: calc(var(--rh) * 1.5);
@@ -35,16 +35,25 @@
   --prim-500: #d75e63;
 
   /* */
-  --type-100: #252525;
+  --type-100: #293231;
   --type-500: #484848;
   --type-600: #959595;
   --type-700: #e0e0e0;
   --type-800: #eeeeee;
 
+  --code-0: #959595;
+  --code-a: #484848;
+  --code-b: #d34c4b;
+  --code-c: #f5845f;
+  --code-d: #feb663;
+  --code-e: #73b673;
+  --code-f: #45acbd;
+  --code-g: #7c73ce;
+
   /* paper outer */
   --paper-rat: 21 / 29.7; /* A4 */
-  --paper-pad: calc(var(--cm) * 2); /* page padding: 70px -> 1.75cm */
-  --paper-cut: calc(var(--cm) * 1.5); /* page overflow: 60px -> 1.5cm */
+  --paper-pad: calc(var(--cm) * 2); /* page padding: 70px -> 2cm */
+  --paper-cut: calc(var(--cm) * 1.25); /* page overflow: 60px -> 1.5cm */
   --paper-wid: calc(var(--cm) * 21); /* page width: 840px -> 21cm */
   --paper-hei: calc(var(--paper-wid) * var(--paper-rat));
 

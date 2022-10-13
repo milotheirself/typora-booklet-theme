@@ -1,11 +1,21 @@
-/** images */
+/** blockquote */
+
+blockquote {
+  margin: 0rem 0rem !important;
+}
+
+/** embeddings */
+
+figure {
+  margin: 0rem 0rem !important;
+}
 
 img {
   z-index: 5;
 
   max-width: unset !important;
-  width: calc(100% + var(--paper-gut) * 2) !important;
-  margin: calc(var(--rh) * 3) calc(0rem - var(--paper-gut)) 0rem !important;
+  width: 100% !important;
+  margin: calc(var(--rh) * 3) 0rem 0rem !important;
   padding: 0rem 0rem;
   border: none;
 
@@ -14,6 +24,17 @@ img {
 
   overflow: hidden;
 }
+
+/** tables */
+
+table tr > * {
+  padding: calc(var(--rh) / 4) var(--paper-gut);
+}
+
+table tbody tr:nth-of-type(odd) {
+  background-color: var(--text-highlight-bg);
+  border-radius: var(--text-highlight-radius);
+} 
 
 /** page break */
 
@@ -81,8 +102,8 @@ hr::after {
 }
 
 #write > pre {
-  margin: 0rem calc(0rem - var(--paper-gut));
-  width: calc(100% + var(--paper-gut) * 2) !important;
+  width: 100%;
+  margin: 0rem 0rem;
   padding: var(--paper-gut) var(--paper-gut);
 
   background-color: var(--text-highlight-bg);
@@ -102,57 +123,57 @@ hr::after {
 }
 
 pre.CodeMirror-line {
-  color: #999999 !important;
+  color: var(--code-a) !important; 
 }
 
 .cm-variable {
-  color: #37352f !important;
+  color: var(--code-a) !important;
 }
 
 .cm-keyword {
-  color: #0277aa !important;
+  color: var(--code-f) !important;
 }
 
 .cm-tag {
-  color: #ff5a5a !important;
+  color: var(--code-b) !important;
 }
 
 .cm-variable-3 {
-  color: #48ff00 !important;
+  color: var(--code-e) !important;
 }
 
 .cm-bracket,
 .cm-error {
-  color: #ff5a5a !important;
+  color: var(--code-b) !important;
 }
 
 .cm-attribute {
-  color: #0277aa !important;
+  color: var(--code-f) !important;
 }
 
 .cm-def {
-  color: #dc4a68 !important;
+  color: var(--code-b) !important;
 }
 
 .cm-comment {
-  color: #708090 !important;
+  color: var(--code-0) !important;
+}
+
+.cm-header {
+  color: var(--code-a) !important;
 }
 
 .cm-string {
-  color: #669900 !important;
+  color: var(--code-e) !important;
   font-variant-ligatures: common-ligatures !important;
 }
 
-.cm-tag:not() {
-  font-weight: 700;
-}
-
 .cm-operator {
-  color: #9a6e3b !important;
+  color: var(--code-0) !important;
 }
 
 .cm-number {
-  color: #990055 !important;
+  color: var(--code-b) !important;
 }
 
 .cm-meta {
@@ -161,11 +182,11 @@ pre.CodeMirror-line {
 }
 
 .cm-atom {
-  color: #845dc4;
+  color: var(--code-f);
 }
 
 .cm-builtin {
-  color: #669900 !important;
+  color: var(--code-e) !important;
 }
 
 .cm-property {
@@ -177,5 +198,5 @@ pre.CodeMirror-line {
 }
 
 .cm-variable-3 {
-  color: #845dc4;
+  color: var(--code-f);
 }

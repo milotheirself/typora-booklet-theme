@@ -196,7 +196,7 @@ body > content {
 
 blockquote {
   all: unset;
-  /* margin-left: 1.75px; */
+  /* margin-left: 2px; */
   /* margin-right: 0px; */
   /* border-left: 4px solid var(--type-100); */
   /* padding: 10px 14px 7px 22px; */

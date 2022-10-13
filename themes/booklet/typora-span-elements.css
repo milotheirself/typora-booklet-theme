@@ -27,56 +27,69 @@ a {
 code,
 pre,
 pre * {
-  font-family: var(--font-family-monospace);
-  font-size: 0.725rem;
-  font-weight: 500;
+  font-family: var(--font-family-monospace) !important;
+  font-size: 0.725rem !important;
+  font-weight: 500 !important;
 
-  line-height: calc(var(--rh) * 2);
+  line-height: calc(var(--rh) * 2) !important;
+}
+
+code {
+  font-size: 0.875em !important; /* note: keep this in `em`!! */
 }
 
 /*  */
 
-h1,
+/* h1, */
 table th,
 table td,
 p,
+[mdtype='def_footnote'],
 p em,
 p strong {
-  font-family: var(--font-family);
-  font-size: 0.8125rem;
-  font-weight: 400;
+  font-family: var(--font-family) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 400 !important;
 
-  line-height: calc(var(--rh) * 2);
-  color: var(--type-100);
+  line-height: calc(var(--rh) * 2) !important;
+  color: var(--type-100) !important;
+}
+
+/** figure captions */
+blockquote *:first-child + p:last-child,
+blockquote *:first-child + p:last-child em,
+blockquote *:first-child + p:last-child strong {
+  font-size: 0.7rem !important;
+  /* text-align: center; */
 }
 
 p code,
 p em {
-  color: var(--type-600) !important;
+  color: var(--type-500) !important;
 }
 
-h1,
+/* h1, */
 table th,
 p strong {
-  color: var(--type-500);
-  font-weight: 500;
+  color: var(--type-500) !important;
+  font-weight: 500 !important;
 }
 
 /** headings */
 
-h2 {
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: calc(var(--rh) * 3);
+  color: var(--type-500);
+}
+
+h2,
+h3 {
   font-size: 1.075rem;
   font-weight: 500;
   line-height: calc(var(--rh) * 2);
   color: var(--type-500);
-}
-
-h3 {
-  /* font-size: 0.8125rem;
-  font-weight: 400;
-  line-height: calc(var(--rh) * 3);
-  color: var(--type-100); */
-  color: red;
 }
 
 h4 {
@@ -91,23 +104,10 @@ h6 {
   font-size: 0.65rem;
   font-weight: 400;
   line-height: calc(var(--rh) * 3);
-  color: var(--type-600);
+  color: var(--type-500);
 }
 
 /*  */
-
-figure {
-  margin: 0rem calc(0rem - var(--paper-gut)) !important;
-}
-
-table tr > * {
-  padding: calc(var(--rh) / 4) var(--paper-gut);
-}
-
-table tbody tr:nth-of-type(odd) {
-  background-color: var(--text-highlight-bg);
-  border-radius: var(--text-highlight-radius);
-}
 
 p,
 h1,
@@ -124,17 +124,17 @@ p + p*/ {
 h2 {
   margin: calc(var(--paper-pad) - var(--line-pad)) 0rem var(--text-mar);
   padding-top: calc(var(--line-pad) + var(--rh) / 2);
-  
+
   border-top: 1px solid var(--type-700);
 }
 
-*[mdtype="hr"] + h2,
+*[mdtype='hr'] + h2,
 br + h2 {
   margin-top: 0rem;
 }
 
 h3 {
-  margin: 0rem 0rem; 
+  margin: 0rem 0rem;
 }
 
 h5,

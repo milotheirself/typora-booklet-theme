@@ -1,9 +1,6 @@
-
 /** Common */
 
-* {
-  box-sizing: border-box;
-}
+/* ... */
 
 /** Typora Viewport */
 
@@ -42,15 +39,46 @@ body > content {
 
     background: transparent;
     border: none;
+
+    overflow: hidden;
   }
 }
 
 @page {
-  margin: var(--paper-pad);
+  size: auto;
+  margin: 2cm 2cm 2cm 2cm;
 }
 
+html {
+  --md-char-color: #c7c5c5;
+  --meta-content-color: #5b808d;
+  --blur-text-color: #c8c8c8;
+  --drag-placeholder-color: #c7c5c5;
+  --panel-border-color: #777777;
+  --active-toggle-btn-color: #ddd;
+  --table-border-color: #ccc;
+  --primary-color: #428bca;
+  --primary-btn-border-color: #285e8e;
+  --primary-btn-text-color: #fff;
+  --search-select-bg-color: #000;
+  --search-select-text-color: #fff;
+  --heading-char-color: #ddd;
+  --control-text-color: var(--text-color);
+  --control-text-hover-color: var(--text-color);
+  --window-border: 1px solid #e9e9e9;
+  --active-file-bg-color: #eee;
+  --active-file-text-color: inherit;
+  --active-file-border-color: #777;
+  --focus-ring-color: #6eace2;
+  --side-bar-bg-color: var(--bg-color);
+  --item-hover-bg-color: rgba(229, 229, 229, 0.59);
+  --item-hover-text-color: inherit;
+  --side-bar-menu-active-tint: var(--side-bar-menu-active-tint);
+  --mac-title-bar-height: 20px;
+  --sidebar-width: 270px;
+  --color-popover-bg-color: #fcfcfc;
+  --rawblock-edit-panel-bd: #fcfcfc;
 
-:root {
   --heading-char-color: var(--light-trait-400);
 
   --color-popover-bg-color: var(--text-color);
@@ -60,7 +88,7 @@ body > content {
   --meta-content-color: var(--primary-color);
   --primary-btn-border-color: var(--primary-color);
 
-  --side-bar-bg-color: #fcfcfc;
+  --side-bar-bg-color: #fcfcfc !important;
 
   --item-hover-bg-color: #e8e7e4;
 
@@ -78,7 +106,40 @@ body {
 
 /* hide yaml header*/
 pre[mdtype='meta_block'] {
-  display: none !important;
+  z-index: 5;
+  position: relative;
+
+  width: calc(100% + (var(--paper-pad) + 1px) * 2) !important;
+  margin: calc(0rem - var(--paper-pad) - 1px) calc(0rem - var(--paper-pad) - 1px) calc(var(--paper-pad)) !important;
+  padding: var(--paper-pad) calc(var(--paper-pad) + var(--paper-gut)) calc(var(--paper-gut) + var(--paper-spl)) !important;
+
+  background: var(--side-bar-bg-color);
+  overflow: visible;
+}
+
+pre[mdtype='meta_block']::after {
+  z-index: 5;
+
+  content: '' !important;
+  position: absolute;
+  background-color: #fff;
+  height: var(--paper-pad);
+
+  pointer-events: none;
+  border: 1px solid var(--type-800);
+}
+
+pre[mdtype='meta_block']::after {
+  inset: auto 0rem calc(0rem - var(--paper-pad));
+
+  border-bottom: none;
+  border-radius: var(--text-highlight-radius) var(--text-highlight-radius) 0rem 0rem;
+}
+
+@media print {
+  pre[mdtype='meta_block'] {
+    display: none !important;
+  }
 }
 
 /**
@@ -98,7 +159,7 @@ pre[mdtype='meta_block'] {
   flex-direction: row;
 
   padding: 0rem 0rem;
-  margin: 0rem 0rem var(--rh);
+  margin: 0rem 0rem var(--text-gut);
 }
 
 #write article > section,
